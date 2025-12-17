@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+    --bg-dark-start: #2c1810;
+    --bg-dark-end: #1a0f08;
+    --parchment-start: #f4e4c1;
+    --parchment-end: #e8d4a8;
+    --border-color: #8b5a2b;
+    --seal-red: #8b1a1a;
+    --seal-dark: #5c0f0f;
+    --gold: #d4af37;
+    --text-primary: #2c1810;
+    --text-secondary: #5c4033;
+    --font-heading: 'UnifrakturMaguntia', cursive;
+    --font-subheading: 'Cinzel', serif;
+    --font-body: 'IM Fell English', serif;
+}
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--bg-dark-start), var(--bg-dark-end));
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+.parchment {
+    background: linear-gradient(to bottom right, var(--parchment-start), var(--parchment-end));
+    border: 2px double var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    padding: 60px;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.seal {
+    position: absolute;
+    top: -30px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, var(--seal-red), var(--seal-dark));
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--gold);
+    z-index: 10;
+}
+.header {
+    text-align: center;
+    border-bottom: 3px double var(--border-color);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.proclamation {
+    font-family: var(--font-subheading);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+h1 {
+    font-family: var(--font-subheading);
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.date {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+.content {
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+.content p {
+    margin-bottom: 1.5rem;
+    text-indent: 40px;
+}
+.drop-cap {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 64px;
+    line-height: 50px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 3px;
+    color: var(--seal-dark);
+}
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-subheading);
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: var(--seal-red);
+}
+
+/* Index specific */
+.title-scroll {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--parchment-start);
+}
+.title-scroll h1 {
+    color: var(--parchment-start);
+    font-family: var(--font-heading);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-size: 4rem;
+    text-transform: none;
+}
+.post-list {
+    display: grid;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.card {
+    background: linear-gradient(to bottom right, var(--parchment-start), var(--parchment-end));
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-primary);
+    display: block;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.card h2 {
+    font-family: var(--font-subheading);
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+.card .meta {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+.card-decoration {
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .parchment {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .title-scroll h1 {
+        font-size: 2.5rem;
+    }
+    .content {
+        text-align: left;
+        font-size: 1.1rem;
+    }
+    .content p {
+        text-indent: 0;
+    }
+    body {
+        padding: 20px 10px;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="parchment">
+        <div class="header">
+            <div class="proclamation">BLOG POST</div>
+            <h1>hello world</h1>
+            <div class="date">Wednesday, December 17, 2025</div>
+        </div>
+        <div class="content">
+            <p><span class="drop-cap">h</span>ello world</p>
+        </div>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
